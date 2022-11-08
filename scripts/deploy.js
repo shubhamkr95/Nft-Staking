@@ -22,6 +22,25 @@ async function main() {
 	// call setApprovalForAll and add staking contract as operator
 	const result = await nft.setApprovalForAll(staking.address, true);
 	console.log(`Added approval`, result.hash);
+
+	// // amount in ether
+	// const amount = { value: ethers.utils.parseUnits("1", "ether") };
+	// // mint nfts
+	// await nft.safeMint(deployer.address, amount);
+	// const ownerBalance = await nft.balanceOf(deployer.address);
+
+	// console.log(`Nft token:`, ownerBalance.toString());
+
+	// // Stake the nft
+	// const stakeTx = await staking.stakeNFT(0);
+	// console.log(`Staking token hash`, stakeTx.hash);
+
+	// // checking the tokenId and timestamp
+	// const data = await staking.stakes(deployer.address);
+
+	// data.map((item) => {
+	// 	console.log(item.toString());
+	// });
 }
 
 main().catch((error) => {

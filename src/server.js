@@ -5,9 +5,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const transaction = require("./routes/transaction");
+const listener = require("./routes/listener");
 
-app.use("/staking/", transaction);
+app.use("/staking/", listener);
 
 const port = process.env.port || 8000;
 app.listen(port, () => {

@@ -49,7 +49,7 @@ contract Staking is ERC721Holder {
 
     function unStakeNFT(uint256 _tokenId) public {
         require(
-            block.timestamp >= stakes[msg.sender].timestamp + 30 days,
+            block.timestamp >= stakes[msg.sender].timestamp + 5, //change to 1 month
             "Cannot unstake before 1 month"
         );
         NFTItem.safeTransferFrom(address(this), msg.sender, _tokenId);
