@@ -15,6 +15,8 @@ Run mongoDB local server in separate terminal
 
 npx hardhat run scripts/deploy.js --network localhost
 
+Update the address inside addresses.js
+
 npx hardhat run script/mint.js --network localhost
 
 npx hardhat run script/stake.js --network localhost
