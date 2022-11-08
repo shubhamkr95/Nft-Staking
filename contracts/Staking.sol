@@ -33,9 +33,6 @@ contract Staking is ERC721Holder {
         uint256 rewardTokens
     );
 
-    // ((15 * (block.timestamp - time)/(100*365 days))
-    // 15  * (1670474003 - 1667844260) / 100 * 31556926 // 1.24
-
     function calculateRate() internal view returns (uint256) {
         return ((15 * month) / 100) * one_year;
     }
@@ -49,12 +46,11 @@ contract Staking is ERC721Holder {
 
     function unStakeNFT(uint256 _tokenId) public {
         require(
-            block.timestamp >= stakes[msg.sender].timestamp + 5, //change to 1 month
+            block.timestamp >= stakes[msg.sender].timestamp + 30 days,
             "Cannot unstake before 1 month"
         );
         NFTItem.safeTransferFrom(address(this), msg.sender, _tokenId);
 
-        // uint256 time = block.timestamp - stakes[msg.sender].timestamp;
         reward = calculateRate();
         emit UnStake(msg.sender, _tokenId, block.timestamp, reward);
     }
