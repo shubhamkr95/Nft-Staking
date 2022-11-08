@@ -8,12 +8,9 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Staking is ERC721Holder {
     IERC721 public NFTItem;
-    IERC20 private token;
-    uint256 private totalTokens;
 
     uint256 month = 2629743;
     uint256 one_year = 31556926;
-    uint256 constant deno = 100;
 
     uint256 public reward;
 
