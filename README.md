@@ -1,13 +1,33 @@
-# Sample Hardhat Project
+# NFT Staking
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Run locally
 
-Try running some of the following tasks:
+```
+git clone https://github.com/shubhamkr95/Nft-Staking.git
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+cd Nft-Stacking
+
+npm install
+
 npx hardhat node
-npx hardhat run scripts/deploy.js
+
+Run mongoDB local server in separate terminal
+
+npx hardhat run scripts/deploy.js --network localhost
+
+npx hardhat run script/mint.js --network localhost
+
+npx hardhat run script/stake.js --network localhost
+
+npx hardhat run script/unstake.js --network localhost
+
+```
+
+## Api Routes
+
+```
+GET - localhost:8000/staking/stake
+
+GET - localhost:8000/staking/unstake
+
 ```
